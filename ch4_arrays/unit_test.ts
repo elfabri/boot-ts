@@ -18,8 +18,8 @@ export let assert = {
         }
     },
     deepEqual(
-        actual: (string | number)[] | string,
-        expected: (string | number)[] | string) {
+        actual: (string | number | boolean)[] | string,
+        expected: (string | number | boolean)[] | string) {
 
         if (typeof actual !== typeof expected) {
             console.log(
