@@ -1,4 +1,4 @@
-import { describe, it, assert, withSubmit } from "./unit_test";
+import { describe, it, assert, withSubmit } from "../unit_test";
 import { averageScore } from "./01_utils";
 
 describe("averageScore", () => {

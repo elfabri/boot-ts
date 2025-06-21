@@ -1,4 +1,4 @@
-import { describe, it, assert, withSubmit } from "./unit_test";
+import { describe, it, assert, withSubmit } from "../unit_test";
 import { interpolateComment } from "./03_utils";
 
 describe("appendComment", () => {
