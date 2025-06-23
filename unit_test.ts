@@ -12,9 +12,9 @@ export function it(title: string, test: () => void) {
 
 // assert
 export let assert = {
-  strictEqual(
-    actual: number | string,
-    expected: number | string) {
+  strictEqual<T>(
+    actual: T,
+    expected: T) {
 
       if (actual !== expected) {
         console.log(`Assertion FAIL:\n-expected: ${expected},\n-got: ${actual}`);
