@@ -14,11 +14,15 @@ export function it(title: string, test: () => void) {
 export let assert = {
 	strictEqual<T>(
 		actual: T,
-		expected: T) {
-
+		expected: T,
+	  msg?: string
+	) {
 			if (actual !== expected) {
 				console.log(`Assertion FAIL:\n-expected: ${expected},\n-got: ${actual}`);
 				return;
+			}
+			if (msg) {
+			  console.log(msg);
 			}
 			console.log("PASS");
 		},
