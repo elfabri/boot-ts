@@ -106,6 +106,19 @@ export let assert = {
                 }
             }
             console.log("PASS");
+        },
+        throws(func: () => string, msg: string) {
+            try {
+                func();
+            }
+            catch (err) {
+                console.log(`Actual: ${(err as Error).message}`);
+                if ((err as Error).message !== msg) {
+                    throw err;
+                }
+            }
+            console.log("Assertion Failed Successfully");
+            console.log("PASS");
         }
 };
 
