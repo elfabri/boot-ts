@@ -130,16 +130,31 @@ function deepEqualObj(a: any, b: any): boolean {
 
     if (typeof a !== "object" || typeof b !== "object" ||
         a === null || b === null) {
+        console.log("FAIL 1");
+        console.log("unmatched types");
+        console.log(`a: ${typeof a}`);
+        console.log(`b: ${typeof b}`);
         return false;
     }
 
     const keysA = Object.keys(a);
     const keysB = Object.keys(b);
 
-    if (keysA.length !== keysB.length) return false;
+    if (keysA.length !== keysB.length) {
+
+        console.log("FAIL 2");
+        console.log("unmatched key q");
+        console.log(`a: ${keysA}`);
+        console.log(`b: ${keysB}`);
+        return false;
+    }
 
     for (const k of keysA) {
         if (!keysB.includes(k) || !deepEqualObj(a[k], b[k])) {
+            console.log("FAIL 3");
+            console.log("unmatched key");
+            console.log(`a: ${a[k]}`);
+            console.log(`b: ${b[k]}`);
             return false;
         }
     }
