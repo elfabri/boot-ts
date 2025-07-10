@@ -24,11 +24,7 @@
  * TypeScript infer them.
  */
 
-interface HasText {
-  text: string;
-}
-
-export function summarizeFeedback<T extends HasText>(
+export function summarizeFeedback<T extends { text: string }>(
   data: T[],
 ): string[] {
   return transform(data, (item) => {
