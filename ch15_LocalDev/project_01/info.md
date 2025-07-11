@@ -153,3 +153,22 @@ You should see something like
 LOG: 2023-01-01T12:00:00Z | Mom, I need the doritos
 chats.js:3 LOG: 2023-01-01T12:02:00Z | MOOOOOOOOM I really need the doritos
 ```
+
+## 06 TypeScript Language Server
+
+Your editor tooling and your build tooling are separate.
+If your editor is using TypeScript 4 and one tsconfig.json file,
+but your build tooling is using TypeScript 5 and another tsconfig.json file,
+you can run into scenarios where your editor and what's being compiled
+in production are out of sync. *Keep them in sync*.
+
+### Assignment 06
+
+Let's pin the version of TypeScript used in our moonshot proof of concept AI Support site.
+
+1. Install TypeScript as a developer dependency:
+
+```
+npm i -D typescript
+```
+
