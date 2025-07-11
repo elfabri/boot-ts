@@ -1,9 +1,9 @@
 function main(): void {
   const projectName = "support.ai";
-  welcome(projectName);
+  console.log(welcome(projectName));
 }
 
-function welcome(name) {
+function welcome(name: string) {
   return "Hello, " + name.toLowerCase();
 }
 
