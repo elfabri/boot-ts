@@ -107,3 +107,49 @@ npx http-server .
 ```
 
 7. Open the server URL in your browser and click the button. You should see a Auto-reply enabled. alert.
+
+## 05 Using JS Libraries
+
+Sometimes you need to install random js libraries that do not come with any type definitions.
+
+The options to handle this are:
+
+    1. Allow the *any* types to flow through your code.
+
+    2. Create your own type definitions.
+
+    3. Check "DefinitlyTyped" and see if they have definitions for the library
+
+DefinitelyTyped is a community-driven repository of type definitions for popular JavaScript libraries.
+
+### Creating Your Own Type Definitions For An Existing JS Library
+
+With Declaration Files, you can declare modules with the name of things used in the library, and TypeScript is going to use these declarations when you import said library.
+
+For internal modules, you just need a declaration file where you just export the types.
+
+### Assignment 05
+
+You're importing a JavaScript module written by one of the more creative engineers at Support.ai.
+The runtime works fine, but TypeScript has no idea what this module exports.
+Time to write your own declaration.
+
+1. Create a new *chats.js* file in your project with the code provided.
+
+2. Update your *index.ts* to import and use the module provided.
+
+3. Create a file named chats.d.ts in your project root.
+Inside it, declare the module’s shape and export it.
+
+4. Compile your TypeScript code.
+
+5. Serve your project with a local dev server.
+
+6. Open the server URL in your browser.
+Open your developer tools and check the console.
+You should see something like
+
+```
+LOG: 2023-01-01T12:00:00Z | Mom, I need the doritos
+chats.js:3 LOG: 2023-01-01T12:02:00Z | MOOOOOOOOM I really need the doritos
+```
