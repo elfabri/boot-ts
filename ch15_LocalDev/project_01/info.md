@@ -23,7 +23,7 @@ where:
 
  * target specifies the ECMAScript target version for the JavaScript output.
 
-### Assignment 01
+### Assignment 02
 
 1. Create a new Node project
 ```
@@ -51,7 +51,7 @@ main();
 
 4. Run *tsc* to make sure it compiles. You should see a newly compiled *index.js* file.
 
-## 02 More compiler options
+## 03 More compiler options
 
 From most to least:
 
@@ -69,7 +69,7 @@ From most to least:
 
  * noUncheckedIndexedAccess: If true, adds undefined to the type of any indexed access, which can prevent some runtime errors.
 
-### Assignment 02
+### Assignment 03
 
 1. Add all the recommended tsconfig options above
 
@@ -79,3 +79,31 @@ From most to least:
 
 4. Fix the code to pass the strictness check, and ensure it compiles
 
+
+## 04 Declaration Files
+
+*.d.ts* files are declaration files. They only contain type information - no runtime code is allowed. They're very useful for defining the types for JavaScript code that exists in your app, but that doesn't have any type information.
+
+### Assignment 04
+
+Support.ai started off as a vanilla JavaScript shop (ew), and not all legacy code has been ported over. Let's work around that.
+
+1. Create an index.html file at the root of your project. Add the provided html code
+
+2. Add the provided Js code to a file named *legacy.js*
+
+3. Update the *index.ts* with the provided code.
+
+TypeScript should now be complaining that supportAI doesn't exist on Window.
+
+4. Create a global.d.ts file that adds the correct type for window.supportAI. You might need to export an empty object from the file so that TypeScript recognizes it as a module.
+
+5. Compile your project with *tsc*
+
+6. Serve your project over *localhost* to avoid CORS errors, then:
+
+```
+npx http-server .
+```
+
+7. Open the server URL in your browser and click the button. You should see a Auto-reply enabled. alert.
