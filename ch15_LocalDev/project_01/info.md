@@ -172,3 +172,26 @@ Let's pin the version of TypeScript used in our moonshot proof of concept AI Sup
 npm i -D typescript
 ```
 
+## 07 TypeScript Ignore
+
+Comments with *@* can be used to tell the compiler how to behave in certain places, with 
+certain values, functions, etc. some of this comments only affect the next line, some others
+are file-wide.
+
+ * To ignore the next line's errors: *@ts-ignore*
+
+ * To disable type checking for the entire file: *@ts-nocheck*
+
+### Assignment 07
+
+Management at Support.ai is sick of maintaining the global.d.ts file
+for the Window.supportAI type. They've decided it's better
+to just add @ts-ignore... who needs good developer experience anyway?
+
+1. Delete the global.d.ts file.
+
+2. Try to compile your code. It should error.
+
+3. Add a @ts-ignore comment to the one line that's erroring. *Don't ignore the entire file*.
+
+4. Try to compile your code again, it should "work".
